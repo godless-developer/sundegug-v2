@@ -1,0 +1,370 @@
+[
+  {
+    "_id": 1,
+    "name": "КАМЖАТАН ШӨЛ",
+    "price": 110000,
+    "description": "гахайн нурууны яс, төмс , халуун ногоотой ясны шөл",
+    "category": "Soups",
+    "image": "/menu/kamjatanshol.png"
+  },
+  {
+    "_id": 2,
+    "name": "ЖЭЮГ БУГИМ",
+    "price": 79000,
+    "description": "гахайн амталж шарсан мах",
+    "category": "Foods",
+    "image": "/menu/jeyugbugim.png"
+  },
+  {
+    "_id": 3,
+    "name": "САМГЁБСАЛ КИМЧИТЭЙ ӨТГӨН ШӨЛ",
+    "price": 70000,
+    "description": "кимчи",
+    "category": "Soups",
+    "image": "/menu/samgyobsal-kimchitei-otgon-shol.png"
+  },
+  {
+    "_id": 4,
+    "name": "БЁО ХЭЖАНГҮГ",
+    "price": 32000,
+    "description": "гахайн нурууны яс, халуун ногоотой ясны шөл",
+    "category": "Soups",
+    "image": "/menu/byohejangug.png"
+  },
+  {
+    "_id": 5,
+    "name": "СҮНДЭ ГҮГ",
+    "price": 32000,
+    "description": "гахайн булууны ясны шөл, сүндэ, гахайн гэдэс",
+    "category": "Soups",
+    "image": "/menu/sundegug.png"
+  },
+  {
+    "_id": 6,
+    "name": "СҮЮҮГ ГҮГ",
+    "price": 32000,
+    "description": "гахайн булууны ясны шөл, гахайн мах",
+    "category": "Soups",
+    "image": "/menu/suyuggug.png"
+  },
+  {
+    "_id": 7,
+    "name": "ПҮГО КУНАМУЛ ШӨЛ",
+    "price": 25000,
+    "description": "буурцагны нахиа, хатаасан загас, өндөг, шар тайлах шөл",
+    "category": "Soups",
+    "image": "/menu/pugokunamvl.png"
+  },
+  {
+    "_id": 8,
+    "name": "ОЛКИНИ ГҮГ",
+    "price": 34000,
+    "description": "булууны ясны шөл, сүндэ, халуун ногоотой кучужан",
+    "category": "Soups",
+    "image": "/menu/olkinigug.png"
+  },
+  {
+    "_id": 9,
+    "name": "СҮНДЭ МАН ГҮГ",
+    "price": 29000,
+    "description": "булууны ясны шөл, гахайн цус, пүнтүүз",
+    "category": "Soups",
+    "image": "/menu/sundemangug.png"
+  },
+  {
+    "_id": 10,
+    "name": "КИМЧИ ЖИГЭ",
+    "price": 32000,
+    "description": "кимчитэй гахайн махан шөл",
+    "category": "Soups",
+    "image": "/menu/kimcijige.png"
+  },
+  {
+    "_id": 11,
+    "name": "ЖИГНЭСЭН СОЛОНГОС СҮНДЭ",
+    "price": 35000,
+    "description": "нэг таваг",
+    "category": "Foods",
+    "image": "/menu/jignesensunde.png"
+  },
+  {
+    "_id": 12,
+    "name": "БУЛУУНЫ ЯСНЫ ШӨЛ, ТОЛГОЙН МАХ",
+    "price": 32000,
+    "description": "돼지머리수육국밥",
+    "category": "Soups",
+    "image": "/menu/buluuniitolgoinmah.png"
+  },
+  {
+    "_id": 13,
+    "name": "ГАХАЙН ТОЛГОЙН МАХ",
+    "price": 29000,
+    "description": "нэг таваг",
+    "category": "Foods",
+    "image": "/menu/gahaintolgoinmah.png"
+  },
+  {
+    "_id": 14,
+    "name": "TERRA",
+    "price": 9000,
+    "description": "500ml",
+    "category": "Drinks",
+    "image": "/menu/terra.jpg"
+  },
+  {
+    "_id": 15,
+    "name": "CASS",
+    "price": "9000",
+    "description": "500ml",
+    "category": "Drinks",
+    "image": "/menu/cass.webp"
+  },
+  {
+    "_id": 16,
+    "name": "ALTANGOVI",
+    "price": "9000",
+    "description": "500ml",
+    "category": "Drinks",
+    "image": "/menu/altangovi.png"
+  },
+  {
+    "_id": 17,
+    "name": "SENGUR",
+    "price": "9000",
+    "description": "500ml",
+    "category": "Drinks",
+    "image": "/menu/sengur.webp"
+  },
+  {
+    "_id": 18,
+    "name": "TIGER",
+    "price": "9000",
+    "description": "500ml",
+    "category": "Drinks",
+    "image": "/menu/tiger.png"
+  },
+  {
+    "_id": 19,
+    "name": "HEINEKEN",
+    "price": "9000",
+    "description": "500ml",
+    "category": "Drinks",
+    "image": "/menu/heineken.jpg"
+  },
+  {
+    "_id": 20,
+    "name": "JINRO IS BACK",
+    "price": "17000",
+    "description": "360ml",
+    "category": "Drinks",
+    "image": "/menu/jinroisback.webp"
+  },
+  {
+    "_id": 21,
+    "name": "CHAMISUL",
+    "price": "17000",
+    "description": "160ml",
+    "category": "Drinks",
+    "image": "/menu/chamisulsoju.png"
+  },
+  {
+    "_id": 22,
+    "name": "CHUM CHURUM",
+    "price": "17000",
+    "description": "160ml",
+    "category": "Drinks",
+    "image": "/menu/chumchurumsoju.webp"
+  },
+  {
+    "_id": 23,
+    "name": "ZERO SUGAR",
+    "price": "17000",
+    "description": "160ml",
+    "category": "Drinks",
+    "image": "/menu/zero-sugar.webp"
+  },
+  {
+    "_id": 24,
+    "name": "MAKGEOLLI",
+    "price": "20000",
+    "description": "750ml",
+    "category": "Drinks",
+    "image": "/menu/makgeolli.webp"
+  },
+  {
+    "_id": 25,
+    "name": "EDEN",
+    "price": "100000",
+    "description": "1L",
+    "category": "Drinks",
+    "image": "/menu/eden.webp"
+  },
+  {
+    "_id": 26,
+    "name": "EDEN",
+    "price": "80000",
+    "description": "0.7L",
+    "category": "Drinks",
+    "image": "/menu/eden.webp"
+  },
+  {
+    "_id": 27,
+    "name": "SOYOMBO",
+    "price": "160000",
+    "description": "1L",
+    "category": "Drinks",
+    "image": "/menu/soyombo.jpg"
+  },
+  {
+    "_id": 28,
+    "name": "SOYOMBO",
+    "price": "140000",
+    "description": "0.7L",
+    "category": "Drinks",
+    "image": "/menu/soyombo.jpg"
+  },
+  {
+    "_id": 29,
+    "name": "EDEN",
+    "price": "15000",
+    "description": "100gr",
+    "category": "Drinks",
+    "image": "/menu/eden.webp"
+  },
+  {
+    "_id": 30,
+    "name": "JAMESON",
+    "price": "300000",
+    "description": "1L",
+    "category": "Drinks",
+    "image": "/menu/jameson.webp"
+  },
+  {
+    "_id": 31,
+    "name": "JAMESON",
+    "price": "250000",
+    "description": "0.7L",
+    "category": "Drinks",
+    "image": "/menu/jameson.webp"
+  },
+  {
+    "_id": 32,
+    "name": "JAGERMEISTER",
+    "price": "190000",
+    "description": "1L",
+    "category": "Drinks",
+    "image": "/menu/jagermeister.webp"
+  },
+  {
+    "_id": 33,
+    "name": "JAGERMEISTER",
+    "price": "150000",
+    "description": "0.7L",
+    "category": "Drinks",
+    "image": "/menu/jagermeister.webp"
+  },
+  {
+    "_id": 34,
+    "name": "JACK DANIELS",
+    "price": "260000",
+    "description": "1L",
+    "category": "Drinks",
+    "image": "/menu/jackdaniels.jpg"
+  },
+  {
+    "_id": 35,
+    "name": "JACK DANIELS",
+    "price": "220000",
+    "description": "0.7L",
+    "category": "Drinks",
+    "image": "/menu/jackdaniels.jpg"
+  },
+  {
+    "_id": 36,
+    "name": "BALLANTINES",
+    "price": "240000",
+    "description": "1L",
+    "category": "Drinks",
+    "image": "/menu/ballentines.webp"
+  },
+  {
+    "_id": 37,
+    "name": "BALLANTINES",
+    "price": "180000",
+    "description": "0.7L",
+    "category": "Drinks",
+    "image": "/menu/ballentines.webp"
+  },
+  {
+    "_id": 38,
+    "name": "JAGER",
+    "price": "20000",
+    "description": "100gr",
+    "category": "Drinks",
+    "image": "/menu/jagermeister.webp"
+  },
+  {
+    "_id": 39,
+    "name": "ЮГГЭЖАН",
+    "price": "35000",
+    "description": "үхрийн махтай, халуун ногоотой ясны шөл",
+    "category": "Soups",
+    "image": "/menu/yuggejang.jpg"
+  },
+  {
+    "_id": 40,
+    "name": "АМТАЛСАН БУДАА",
+    "price": "19000",
+    "description": "맛본 쌀",
+    "category": "Foods",
+    "image": "/menu/amtalsanbudaa.jpg"
+  },
+  {
+    "_id": 41,
+    "name": "САМГЁБСАЛ СҮЮҮГ",
+    "price": "50000",
+    "description": "삼겹살 수육",
+    "category": "Foods",
+    "image": "/menu/samgebsalsuyug.jpg"
+  },
+  {
+    "_id": 42,
+    "name": "КАНВОНДУ МҮЧОН БЁО ХЭЖАНГҮГ",
+    "price": "35000",
+    "description": "강원도 뮈촌 벼 해장국",
+    "category": "Foods",
+    "image": "/menu/kanwondumuchonbyohejangug.jpg"
+  },
+  {
+    "_id": 43,
+    "name": "СҮНДЭ НЭЖАН ПУКИМ",
+    "price": "79000",
+    "description": "Амталж шарсан гахайн гэдэс",
+    "category": "Foods",
+    "image": "/menu/sundenejanpukim.jpg"
+  },
+  {
+    "_id": 44,
+    "name": "САМГЁБСАЛ БҮЛГҮГИ",
+    "price": "59000",
+    "description": "삼겹살 그룹",
+    "category": "Foods",
+    "image": "/menu/samgebsalbulgugi.jpg"
+  },
+  {
+    "_id": 45,
+    "name": "АМТАЛЖ ШАРСАН МАГЧАН",
+    "price": "79000",
+    "description": "맛있게 구운 마그찬",
+    "category": "Foods",
+    "image": "/menu/amtaljsharsanmagchan.jpg"
+  },
+  {
+    "_id": 46,
+    "name": "ТУНКАСС",
+    "price": "25000",
+    "description": "툰카스",
+    "category": "Foods",
+    "image": "/menu/tunkass.jpg"
+  }
+]
