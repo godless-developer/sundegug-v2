@@ -34,7 +34,7 @@ export default function HomeComponent() {
         viewport={{ once: true }}
       >
         <Image
-          src="/kamjatan-shol-ai.png"
+          src="/menu/kamjatan-shol-ai.png"
           alt="homepng"
           width={800}
           height={800}
