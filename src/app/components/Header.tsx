@@ -40,10 +40,11 @@ export default function Header() {
       </div>
 
       {/* Mobile Menu Drawer */}
+      {/* Mobile Menu Drawer */}
       <AnimatePresence>
         {open && (
           <>
-            {/* Overlay */}
+            {/* Overlay зөвхөн drawer-ийн ард */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -59,7 +60,7 @@ export default function Header() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "tween", duration: 0.3 }}
-              className="fixed top-0 right-0 w-2/3 h-[300px] overflow-hidden rounded-l-[20px] bg-[#79443B]/20 backdrop-blur-lg p-6 z-[10000] flex flex-col space-y-6"
+              className="fixed top-0 right-0 w-2/3 h-[300px] overflow-y-auto rounded-l-[20px] bg-[#79443B]/20 backdrop-blur-lg p-6 z-[9999] flex flex-col space-y-6"
             >
               {navLinks.map((link) => (
                 <a

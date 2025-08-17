@@ -7,7 +7,7 @@ export default function HomeComponent() {
   return (
     <div
       id="home"
-      className="flex flex-col md:flex-row w-full container items-center justify-center md:justify-between min-h-screen px-4 md:px-10"
+      className="flex flex-col md:flex-row w-full container items-center justify-center md:justify-between md:h-[600px] px-4 md:px-10"
     >
       {/* Text хэсэг */}
       <motion.div
@@ -38,7 +38,7 @@ export default function HomeComponent() {
           alt="homepng"
           width={800}
           height={800}
-          className="max-w-full h-auto object-contain"
+          className="max-w-full h-auto object-cover rounded-lg shadow-lg"
           priority
         />
       </motion.div>

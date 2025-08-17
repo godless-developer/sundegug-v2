@@ -19,7 +19,7 @@ export default function HomePage() {
       </div>
 
       {/* Content */}
-      <div className="flex flex-col items-center text-white justify-start w-full">
+      <div className="flex flex-col items-center text-white md:gap-80 gap-40 justify-start w-full">
         <Header />
         <HomeComponent />
         <Menu />

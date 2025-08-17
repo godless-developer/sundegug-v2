@@ -92,7 +92,7 @@ export default function FoodMenu() {
                   </span>
                 )}
               </PopoverTrigger>
-              <PopoverContent className="border-none z-50 bg-[url('/bg.png')] rounded-lg shadow-lg w-80 text-white">
+              <PopoverContent className="border-none z-50 rounded-lg bg-transparent shadow-lg w-80 text-white">
                 <div className="rounded-lg w-full h-full backdrop-blur-md p-4">
                   <h2 className="text-lg font-semibold mb-2">
                     Сонгосон хоолнууд
@@ -188,7 +188,7 @@ export default function FoodMenu() {
                     category: food.category,
                   })
                 }
-                className={`rounded-lg cursor-pointer flex flex-col w-[240px] items-center duration-200 ease-in-out transition ${
+                className={`rounded-lg cursor-pointer flex flex-col w-[280px]  items-center duration-200 ease-in-out transition ${
                   selectedItems.find((f) => f.id === String(food._id))
                     ? "border-green-500 border"
                     : "border border-transparent"
@@ -197,7 +197,9 @@ export default function FoodMenu() {
                 <img
                   src={food.image}
                   alt={typeof food.name === "string" ? food.name : ""}
-                  className="rounded-t-lg w-70 h-48 object-cover"
+                  className={`rounded-t-lg h-48 object-cover ${
+                    food.category === "Drinks" ? "w-50" : "w-full"
+                  }`}
                 />
                 <div
                   className={`flex flex-col items-center text-center duration-200 ease-in-out ${
