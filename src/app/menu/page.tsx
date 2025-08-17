@@ -74,8 +74,8 @@ export default function FoodMenu() {
                   </span>
                 )}
               </PopoverTrigger>
-              <PopoverContent className="z-50 bg-[url('/bg.png')] rounded-lg shadow-lg w-80 text-white">
-                <div className="rounded-lg w-full h-full backdrop-blur-md p-4">
+              <PopoverContent className="border-none  z-50 bg-[url('/bg.png')] rounded-lg shadow-lg w-80 text-white">
+                <div className=" rounded-lg w-full h-full backdrop-blur-md p-4">
                   <h2 className="text-lg font-semibold mb-2">
                     Сонгосон хоолнууд
                   </h2>
@@ -130,8 +130,8 @@ export default function FoodMenu() {
               onClick={() => setSelectedCategory(cat)}
               className={`px-4 py-1 rounded-full border text-sm whitespace-nowrap cursor-pointer ${
                 selectedCategory === cat
-                  ? "bg-green-500 text-white border-green-500"
-                  : "bg-none text-green-500 border-green-500"
+                  ? "bg-[#3B3C36]  text-green-500 border-[#3B3C36]"
+                  : "bg-none text-white border-[#3B3C36]"
               }`}
             >
               {cat}
@@ -141,8 +141,8 @@ export default function FoodMenu() {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 overflow-y-auto mt-[112px] p-4">
-        <div className=" grid-cols-1 flex flex-col items-center  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
+      <main className="flex-1 overflow-y-auto mt-[112px] p-4 flex justify-center">
+        <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
           {filteredMenu.map(
             (food: {
               description: ReactNode;
@@ -167,25 +167,40 @@ export default function FoodMenu() {
                     category: food.category,
                   })
                 }
-                className={`border rounded-lg p-3 cursor-pointer flex flex-col w-[300px] items-center hover:border-green-500 transition ${
-                  selectedItems.find((f) => f.id === String(food._id)) &&
-                  "border-green-500"
+                className={`rounded-lg cursor-pointer flex flex-col w-[240px] items-center duration-200 ease-in-out transition ${
+                  selectedItems.find((f) => f.id === String(food._id))
+                    ? "border-green-500 border"
+                    : "border border-transparent"
                 }`}
               >
                 <img
                   src={food.image}
                   alt={typeof food.name === "string" ? food.name : ""}
-                  className="rounded-lg mb-2 w-70 h-48 object-cover"
+                  className="rounded-t-lg w-70 h-48 object-cover"
                 />
-                <h1 className="font-semibold text-xl">{food.name}</h1>
-                <p className="text-[14px] tracking-tighter text-gray-300 mb-2">
-                  {food.description}
-                </p>
-                <div className="flex justify-between w-full items-center mt-auto">
-                  <p className="text-green-500">{food.category}</p>
-                  <p className="text-sm text-gray-500">
-                    {food.price.toLocaleString()}₮
+                <div
+                  className={`flex flex-col items-center text-center duration-200 ease-in-out ${
+                    selectedItems.find((f) => f.id === String(food._id)) &&
+                    "bg-white/10"
+                  }  backdrop-blur-md rounded-b-lg p-3 w-full h-full`}
+                >
+                  <h1 className="font-semibold text-xl">{food.name}</h1>
+                  <p className="text-[14px] tracking-tighter text-gray-300 mb-2">
+                    {food.description}
                   </p>
+                  <div className="flex justify-between w-full items-center mt-auto">
+                    <p
+                      className={` ${
+                        selectedItems.find((f) => f.id === String(food._id)) &&
+                        "text-green-500"
+                      } text-sm duration-200 ease-in-out`}
+                    >
+                      {food.category}
+                    </p>
+                    <p className="text-sm font-semibold text-gray-500">
+                      {food.price.toLocaleString()}₮
+                    </p>
+                  </div>
                 </div>
               </div>
             )

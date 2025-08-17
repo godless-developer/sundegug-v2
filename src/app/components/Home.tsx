@@ -11,7 +11,7 @@ export default function HomeComponent() {
     >
       {/* Text хэсэг */}
       <motion.div
-        className="w-full md:w-1/2 flex justify-center md:justify-end  items-center text-center md:text-right mt-6 md:mt-0"
+        className="w-full md:w-1/2 flex justify-center md:justify-end  items-center text-center md:text-start mt-6 md:mt-0"
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
