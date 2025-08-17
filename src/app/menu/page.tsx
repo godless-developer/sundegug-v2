@@ -59,7 +59,16 @@ export default function FoodMenu() {
   };
 
   return (
-    <div className="h-screen flex flex-col text-white">
+    <div className="relative w-full min-h-screen overflow-x-hidden text-white">
+      {/* ✅ Fixed background image */}
+      <div className="fixed inset-0 -z-10">
+        <img
+          src="/bg.webp"
+          alt="Background"
+          className="w-full h-full object-cover"
+        />
+      </div>
+
       {/* Header */}
       <header className="fixed top-0 left-0 w-full shadow z-50 py-3">
         <div className="flex justify-between items-center px-10 py-3">
@@ -74,8 +83,8 @@ export default function FoodMenu() {
                   </span>
                 )}
               </PopoverTrigger>
-              <PopoverContent className="border-none  z-50 bg-[url('/bg.png')] rounded-lg shadow-lg w-80 text-white">
-                <div className=" rounded-lg w-full h-full backdrop-blur-md p-4">
+              <PopoverContent className="border-none z-50 bg-[url('/bg.png')] rounded-lg shadow-lg w-80 text-white">
+                <div className="rounded-lg w-full h-full backdrop-blur-md p-4">
                   <h2 className="text-lg font-semibold mb-2">
                     Сонгосон хоолнууд
                   </h2>
@@ -130,7 +139,7 @@ export default function FoodMenu() {
               onClick={() => setSelectedCategory(cat)}
               className={`px-4 py-1 rounded-full border text-sm whitespace-nowrap cursor-pointer ${
                 selectedCategory === cat
-                  ? "bg-[#3B3C36]  text-green-500 border-[#3B3C36]"
+                  ? "bg-[#3B3C36] text-green-500 border-[#3B3C36]"
                   : "bg-none text-white border-[#3B3C36]"
               }`}
             >
@@ -142,7 +151,7 @@ export default function FoodMenu() {
 
       {/* Main Content */}
       <main className="flex-1 overflow-y-auto mt-[112px] p-4 flex justify-center">
-        <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
           {filteredMenu.map(
             (food: {
               description: ReactNode;
@@ -182,7 +191,7 @@ export default function FoodMenu() {
                   className={`flex flex-col items-center text-center duration-200 ease-in-out ${
                     selectedItems.find((f) => f.id === String(food._id)) &&
                     "bg-white/10"
-                  }  backdrop-blur-md rounded-b-lg p-3 w-full h-full`}
+                  } backdrop-blur-md rounded-b-lg p-3 w-full h-full`}
                 >
                   <h1 className="font-semibold text-xl">{food.name}</h1>
                   <p className="text-[14px] tracking-tighter text-gray-300 mb-2">
@@ -190,7 +199,7 @@ export default function FoodMenu() {
                   </p>
                   <div className="flex justify-between w-full items-center mt-auto">
                     <p
-                      className={` ${
+                      className={`${
                         selectedItems.find((f) => f.id === String(food._id)) &&
                         "text-green-500"
                       } text-sm duration-200 ease-in-out`}
