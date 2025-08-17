@@ -8,14 +8,26 @@ import Services from "./components/Services";
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col items-center text-white justify-start w-full overflow-x-hidden">
-      <Header />
-      <HomeComponent />
-      <Menu />
-      <Services />
-      <Locations />
-      <About />
-      <Footer />
+    <div className="relative w-full min-h-screen overflow-x-hidden">
+      {/* Background */}
+      <div className="fixed inset-0 -z-10">
+        <img
+          src="/bg.webp"
+          alt="background"
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      {/* Content */}
+      <div className="flex flex-col items-center text-white justify-start w-full">
+        <Header />
+        <HomeComponent />
+        <Menu />
+        <Services />
+        <Locations />
+        <About />
+        <Footer />
+      </div>
     </div>
   );
 }
