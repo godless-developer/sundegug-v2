@@ -1,5 +1,5 @@
 "use client";
-import React, { ReactNode, useState, useEffect } from "react";
+import React, { ReactNode, useState, useEffect, useRef } from "react";
 import { MinusCircle, ShoppingCart } from "lucide-react";
 import {
   Popover,
@@ -21,10 +21,12 @@ interface MenuItem {
 export default function FoodMenu() {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [selectedItems, setSelectedItems] = useState<MenuItem[]>([]);
-
   const categories = ["All", "Foods", "Soups", "Drinks"];
 
-  // ⬇ LocalStorage-с сэргээх
+  // 🟢 Scroll-ийг хянах ref
+  const mainRef = useRef<HTMLDivElement>(null);
+
+  // LocalStorage-с сэргээх
   useEffect(() => {
     const stored = localStorage.getItem("selectedItems");
     if (stored) {
@@ -32,10 +34,17 @@ export default function FoodMenu() {
     }
   }, []);
 
-  // ⬇ Сонгосон хоол өөрчлөгдөх бүрт хадгалах
+  // Сонгосон хоол хадгалах
   useEffect(() => {
     localStorage.setItem("selectedItems", JSON.stringify(selectedItems));
   }, [selectedItems]);
+
+  // Category солигдсон үед scroll-ийг эхнээс нь
+  useEffect(() => {
+    if (mainRef.current) {
+      mainRef.current.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [selectedCategory]);
 
   const filteredMenu =
     selectedCategory === "All"
@@ -60,7 +69,7 @@ export default function FoodMenu() {
 
   return (
     <div className="relative w-full min-h-screen overflow-x-hidden text-white">
-      {/* ✅ Fixed background image */}
+      {/* Fixed background image */}
       <div className="fixed inset-0 -z-10">
         <img
           src="/bg.webp"
@@ -70,7 +79,7 @@ export default function FoodMenu() {
       </div>
 
       {/* Header */}
-      <header className="fixed top-0 left-0 w-full shadow z-50 py-3">
+      <header className="fixed top-0 left-0 w-full shadow z-50 py-3 backdrop-blur-[8px] text-white">
         <div className="flex justify-between items-center px-10 py-3">
           <h1 className="text-lg font-bold">Меню</h1>
           <div className="relative cursor-pointer z-50">
@@ -150,8 +159,11 @@ export default function FoodMenu() {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 overflow-y-auto mt-[112px] p-4 flex justify-center">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
+      <main className="flex-1 overflow-y-auto pt-[112px] p-4 flex justify-center">
+        <div
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5"
+          ref={mainRef}
+        >
           {filteredMenu.map(
             (food: {
               description: ReactNode;
@@ -191,7 +203,7 @@ export default function FoodMenu() {
                   className={`flex flex-col items-center text-center duration-200 ease-in-out ${
                     selectedItems.find((f) => f.id === String(food._id)) &&
                     "bg-white/10"
-                  } backdrop-blur-md rounded-b-lg p-3 w-full h-full`}
+                  } backdrop-blur-md rounded-b-lg p-3  w-full h-full`}
                 >
                   <h1 className="font-semibold text-xl">{food.name}</h1>
                   <p className="text-[14px] tracking-tighter text-gray-300 mb-2">
