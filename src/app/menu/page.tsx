@@ -101,7 +101,7 @@ export default function FoodMenu() {
               transition={{ type: "tween", duration: 0.3 }}
               className="fixed top-0 left-0 w-[282px] h-[125px]  rounded-r-[20px] bg-[#79443B]/20 backdrop-blur-lg p-6 z-[9999] flex flex-col space-y-6"
             >
-              <p>Kwon Gu Sung SundeGugPub</p>
+              <p className="text-nowrap">Kwon Gu Sung SundeGugPub</p>
               {navLinks.map((link) => (
                 <a
                   key={link.href}
