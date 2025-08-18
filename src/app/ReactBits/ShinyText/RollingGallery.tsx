@@ -59,7 +59,7 @@ const RollingGallery: React.FC<RollingGalleryProps> = ({
     ? (faceWidth * faceCount) / (2.4 * Math.PI)
     : (faceWidth * faceCount) / (2.6 * Math.PI);
 
-  const dragFactor: number = 0.05;
+  const dragFactor: number = 0.006;
   const rotation = useMotionValue(0);
   const controls = useAnimation();
 
@@ -103,14 +103,12 @@ const RollingGallery: React.FC<RollingGalleryProps> = ({
     rotation.set(rotation.get() + info.offset.x * dragFactor);
   };
 
-  const handleDragEnd = (
-    _: MouseEvent | TouchEvent | PointerEvent,
-    info: PanInfo
-  ) => {
-    const finalAngle = rotation.get() + info.velocity.x * dragFactor;
-    rotation.set(finalAngle);
+  // 👇 энэ function-ийг энгийн болгож өөрчилнө
+  const handleDragEnd = () => {
+    // инерци хийхгүй, зөвхөн тухайн байранд үлдээнэ
     if (autoplay) {
-      startInfiniteSpin(finalAngle);
+      const currentAngle = rotation.get();
+      startInfiniteSpin(currentAngle);
     }
   };
 
@@ -159,7 +157,7 @@ const RollingGallery: React.FC<RollingGalleryProps> = ({
               <img
                 src={url}
                 alt="gallery"
-                className={`pointer-events-none rounded-[15px] border border-white object-cover transition-transform duration-300 ease-out group-hover:scale-105
+                className={`pointer-events-none rounded-[15px] border border-white object-cover transition-transform duration-300 ease-out 
                   ${isMobile ? "h-[260px] w-[340px]" : "h-[200px] w-[300px]"}`}
               />
             </div>

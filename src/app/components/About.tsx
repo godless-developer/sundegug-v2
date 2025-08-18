@@ -8,7 +8,7 @@ export default function About() {
       id="about"
     >
       <ShinyText
-        text="Our Locations"
+        text="About Us"
         disabled={false}
         speed={2}
         className="md:text-[60px] text-[30px] font-bold"
