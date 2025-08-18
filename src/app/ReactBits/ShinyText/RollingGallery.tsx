@@ -11,16 +11,18 @@ import {
 } from "motion/react";
 
 const IMGS: string[] = [
-  "https://images.unsplash.com/photo-1528181304800-259b08848526?q=80&w=1200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?q=80&w=1200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=1200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1495103033382-fe343886b671?q=80&w=1200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1506781961370-37a89d6b3095?q=80&w=1200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1599576838688-8a6c11263108?q=80&w=1200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1494094892896-7f14a4433b7a?q=80&w=1200&auto=format&fit=crop",
-  "https://plus.unsplash.com/premium_photo-1664910706524-e783eed89e71?q=80&w=1200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1503788311183-fa3bf9c4bc32?q=80&w=1200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1585970480901-90d6bb2a48b5?q=80&w=1200&auto=format&fit=crop",
+  "/about/3.jpg",
+  "/about/2.jpg",
+  "/about/1.jpg",
+  "/about/4.jpg",
+  "/about/5.jpg",
+  "/about/12.jpg",
+  "/about/7.jpg",
+  "/about/8.jpg",
+  "/about/9.jpg",
+  "/about/10.jpg",
+  "/about/11.jpg",
+  "/about/6.jpg",
 ];
 
 interface RollingGalleryProps {
@@ -45,21 +47,16 @@ const RollingGallery: React.FC<RollingGalleryProps> = ({
     return () => window.removeEventListener("resize", checkSize);
   }, []);
 
-  // responsive тохиргоо
-  // responsive тохиргоо
   const cylinderWidth: number = isMobile ? 500 : 1100;
   const faceCount: number = galleryImages.length;
 
-  // mobile үед fixed өргөн өгч, desktop дээр dynamic
-  const faceWidth: number = isMobile
-    ? 280 // mobile → нэг зураг + хоёр талдаа жаахан цухуйна
-    : (cylinderWidth / faceCount) * 3.5;
+  const faceWidth: number = isMobile ? 250 : (cylinderWidth / faceCount) * 3.5;
 
   const radius: number = isMobile
-    ? (faceWidth * faceCount) / (2.4 * Math.PI)
+    ? (faceWidth * faceCount) / (2.3 * Math.PI)
     : (faceWidth * faceCount) / (2.6 * Math.PI);
 
-  const dragFactor: number = 0.006;
+  const dragFactor: number = 0.007; // Adjust this value to control the drag sensitivity
   const rotation = useMotionValue(0);
   const controls = useAnimation();
 
@@ -72,7 +69,7 @@ const RollingGallery: React.FC<RollingGalleryProps> = ({
     controls.start({
       rotateY: [startAngle, startAngle - 360],
       transition: {
-        duration: 25, // бага зэрэг удаашруулж smooth болгов
+        duration: 25,
         ease: "linear",
         repeat: Infinity,
       },
@@ -95,17 +92,12 @@ const RollingGallery: React.FC<RollingGalleryProps> = ({
     }
   };
 
-  const handleDrag = (
-    _: MouseEvent | TouchEvent | PointerEvent,
-    info: PanInfo
-  ) => {
+  const handleDrag = (_: TouchEvent | PointerEvent, info: PanInfo) => {
     controls.stop();
     rotation.set(rotation.get() + info.offset.x * dragFactor);
   };
 
-  // 👇 энэ function-ийг энгийн болгож өөрчилнө
   const handleDragEnd = () => {
-    // инерци хийхгүй, зөвхөн тухайн байранд үлдээнэ
     if (autoplay) {
       const currentAngle = rotation.get();
       startInfiniteSpin(currentAngle);

@@ -23,7 +23,7 @@ export default function Locations() {
 
           <div className="text-center backdrop-blur-[6px] p-2 w-full h-[220px]">
             <p>Төв Салбар</p>
-            <div className="flex flex-col items-start">
+            <div className="flex mt-3 gap-1 flex-col items-start">
               <div className="flex items-center">
                 <MapPin className="w-4 h-4 inline-block mr-2" />
                 <p className="text-gray-400">СБД 2-р хороо 1а байр 2 тоот</p>
@@ -54,12 +54,12 @@ export default function Locations() {
                 </p>
               </div>
               <div className="flex items-center">
-                <Phone className="w-4 h-4 inline-block mr-2" />
+                <Phone className="w-4 h-4 inline-block mr-4" />
                 <p className="text-gray-400">(+976) 77393579</p>
               </div>
               <div className="flex items-center">
-                <Clock className="w-4 h-4 inline-block mr-2" />
-                <p className="text-gray-400">10:00 - 22:00 Өдөр бүр</p>
+                <Clock className="w-4 h-4 inline-block mr-4" />
+                <p className="text-gray-400">09:00 - 23:00 Өдөр бүр</p>
               </div>
             </div>
           </div>
@@ -79,13 +79,13 @@ export default function Locations() {
                 </p>
               </div>
               <div className="flex items-center">
-                <Phone className="w-4 h-4 inline-block mr-2" />
+                <Phone className="w-4 h-4 inline-block mr-4" />
                 <p className="text-gray-400">
                   (+976) 91916307, (+976) 77776959
                 </p>
               </div>
               <div className="flex items-center">
-                <Clock className="w-4 h-4 inline-block mr-2" />
+                <Clock className="w-4 h-4 inline-block mr-4" />
                 <p className="text-gray-400">9:00 - 00:00 Өдөр бүр</p>
               </div>
             </div>

@@ -1,11 +1,12 @@
 "use client";
 import React, { ReactNode, useState, useEffect, useRef } from "react";
-import { MinusCircle, ShoppingCart } from "lucide-react";
+import { Menu, MinusCircle, ShoppingCart } from "lucide-react";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { AnimatePresence, motion } from "framer-motion";
 const menuDatas = require("@/lib/menuDatas.json");
 
 interface MenuItem {
@@ -21,10 +22,12 @@ interface MenuItem {
 export default function FoodMenu() {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [selectedItems, setSelectedItems] = useState<MenuItem[]>([]);
+  const [open, setOpen] = useState(false);
   const categories = ["All", "Foods", "Soups", "Drinks"];
 
   // 🟢 Scroll-ийг хянах ref
   const mainRef = useRef<HTMLDivElement>(null);
+  const navLinks = [{ name: "Home", href: "/#home" }];
 
   // LocalStorage-с сэргээх
   useEffect(() => {
@@ -77,22 +80,61 @@ export default function FoodMenu() {
           className="w-full h-full object-cover"
         />
       </div>
+      <AnimatePresence>
+        {open && (
+          <>
+            {/* Overlay зөвхөн drawer-ийн ард */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              onClick={() => setOpen(false)}
+              className="fixed inset-0 bg-black/50 z-[9998]"
+            />
+
+            {/* Drawer */}
+            <motion.div
+              initial={{ x: "-100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "-100%" }}
+              transition={{ type: "tween", duration: 0.3 }}
+              className="fixed top-0 left-0 w-[282px] h-[125px]  rounded-r-[20px] bg-[#79443B]/20 backdrop-blur-lg p-6 z-[9999] flex flex-col space-y-6"
+            >
+              <p>Kwon Gu Sung SundeGugPub</p>
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  className="border px-4 py-1.5 flex items-center justify-center text-[17px] rounded-full bg-white/30 text-center transition"
+                >
+                  {link.name}
+                </a>
+              ))}
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
 
       {/* Header */}
       <header className="fixed top-0 left-0 w-full shadow z-50 py-3 backdrop-blur-[8px] text-white">
-        <div className="flex justify-between items-center px-10 py-3">
-          <h1 className="text-lg font-bold">Меню</h1>
+        <div className="flex justify-between gap-1 items-center px-10 py-3">
+          <button onClick={() => setOpen(!open)} className=" text-white">
+            <Menu size={28} className="cursor-pointer" />
+          </button>
+          <p className="text-2xl font-stretch-200%">Menu</p>
           <div className="relative cursor-pointer z-50">
             <Popover>
               <PopoverTrigger>
                 <ShoppingCart size={28} />
                 {selectedItems.length > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">
+                  <span className="absolute -top-2 -right-3 bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">
                     {selectedItems.length}
                   </span>
                 )}
               </PopoverTrigger>
-              <PopoverContent className="border-none z-50 rounded-lg bg-transparent shadow-lg w-80 text-white">
+              <PopoverContent className="border-none z-50 rounded-lg bg-black/85 shadow-lg w-80 text-white">
                 <div className="rounded-lg w-full h-full backdrop-blur-md p-4">
                   <h2 className="text-lg font-semibold mb-2">
                     Сонгосон хоолнууд
@@ -118,6 +160,7 @@ export default function FoodMenu() {
                             </div>
                             <MinusCircle
                               color="red"
+                              size={20}
                               className="cursor-pointer"
                               onClick={() => removeItem(item)}
                             />
@@ -141,7 +184,7 @@ export default function FoodMenu() {
         </div>
 
         {/* Category filter */}
-        <div className="flex gap-3 px-4 overflow-x-auto z-50 justify-center">
+        <div className="flex gap-2 px-5 overflow-x-auto z-50 justify-center">
           {categories.map((cat) => (
             <button
               key={cat}

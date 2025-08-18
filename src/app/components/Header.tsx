@@ -15,9 +15,18 @@ export default function Header() {
   return (
     <header className="w-full h-16 text-white flex items-center justify-between font-sans px-6 md:px-20 fixed z-[9999]">
       {/* Background Blur */}
-      <div className="flex items-center w-full h-full rounded-b-[30px] bg-white/5 backdrop-blur-[4px] justify-between container px-6 md:px-50">
+      <div className="flex items-center w-full h-full rounded-b-[30px] bg-white/5 backdrop-blur-[4px] justify-between container py-4 px-6 md:px-50">
         {/* Logo */}
-        <h1 className="text-lg md:text-xl font-semibold">Logo</h1>
+        <a
+          href="#home"
+          className="bg-white backdrop-blur-lg rounded-lg h-full flex items-center justify-center"
+        >
+          <img
+            src="/sundeLogo.png"
+            alt="sundelogo"
+            className="w-40 pt-1 object-cover"
+          />
+        </a>
         {/* Desktop Menu */}
         <nav className="hidden md:block">
           <ul className="flex items-center space-x-10 font-extralight">
