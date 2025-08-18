@@ -21,18 +21,16 @@ export default function Locations() {
         >
           <div className="bg-[url('/location/loc1.png')] bg-cover bg-center w-full h-full"></div>
 
-          <div className="text-center backdrop-blur-[6px] p-2 w-full">
+          <div className="text-center backdrop-blur-[6px] p-2 w-full h-[220px]">
             <p>Төв Салбар</p>
             <div className="flex flex-col items-start">
               <div className="flex items-center">
                 <MapPin className="w-4 h-4 inline-block mr-2" />
                 <p className="text-gray-400">СБД 2-р хороо 1а байр 2 тоот</p>
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center justify-start">
                 <Phone className="w-4 h-4 inline-block mr-2" />
-                <p className="text-gray-400">
-                  (+976) 90303035, (+976) 88026093
-                </p>
+                <p className="text-gray-400">(+976)90303035, (+976)88026093</p>
               </div>
               <div className="flex items-center">
                 <Clock className="w-4 h-4 inline-block mr-2" />
@@ -46,7 +44,7 @@ export default function Locations() {
           spotlightColor="rgba(0, 229, 255, 0.2)"
         >
           <div className="bg-[url('/location/loc2.png')] bg-cover bg-center w-full h-full"></div>
-          <div className="text-center backdrop-blur-[6px] p-2 w-full ">
+          <div className="text-center backdrop-blur-[6px] p-2 w-full h-[220px]">
             <p>Баянгол Салбар</p>
             <div className="flex flex-col items-start">
               <div className="flex items-center">
@@ -71,7 +69,7 @@ export default function Locations() {
           spotlightColor="rgba(0, 229, 255, 0.2)"
         >
           <div className="bg-[url('/location/loc4.png')] bg-cover bg-center w-full h-full"></div>
-          <div className="text-center backdrop-blur-[6px] p-2 w-full rounded-b-lg">
+          <div className="text-center backdrop-blur-[6px] p-2 w-full h-[200px] rounded-b-lg">
             <p>Хан-Уул Салбар</p>
             <div className="flex flex-col items-start">
               <div className="flex items-center">
